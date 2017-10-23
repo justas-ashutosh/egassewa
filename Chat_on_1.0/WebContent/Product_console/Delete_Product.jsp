@@ -34,11 +34,12 @@ body{
 </ul>
 </nav>
 <h1><b><i><u>Delete Product Console....</u></i></b></h1>
-<form action="#" method="post">
+<form action="/Chat_on_1.0/Product_Handeller" method="post">
   <div class="form-group">
     <label for="exampleInputEmail1">Enter Product id</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter pid">
+    <input type="text" class="form-control" name="pid" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter pid">
   </div>
+  <input type="hidden" name="del" value="del">
  <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 </body>

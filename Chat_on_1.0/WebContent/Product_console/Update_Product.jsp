@@ -41,23 +41,24 @@ body{
 </p>
 <div class="collapse" id="collapseExample">
   <div class="card card-body">
-   <form action="#" method="post">
+   <form action="/Chat_on_1.0/Product_Handeller" method="post">
    <div class="form-group">
     <label for="exampleInputEmail1">Enter Product id</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter pid">
+    <input type="text" name="pid" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter pid">
   </div>
     <div class="form-group">
     <label for="exampleInputEmail1">Enter Product Name</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter pname">
+    <input type="text" name="pname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter pname">
   </div>
     <div class="form-group">
     <label for="exampleInputEmail1">Enter Product Image Path</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter pimg">
+    <input type="text" name="pimg" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter pimg">
   </div>
     <div class="form-group">
     <label for="exampleInputEmail1">Enter Product Price</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter price">
+    <input type="text" name="price" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter price">
   </div>
+  <input type="hidden" name="up" value="up">
   <button type="submit" class="btn btn-primary">Submit</button>
   </form>
   </div>

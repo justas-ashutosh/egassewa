@@ -34,27 +34,28 @@ body{
 </ul>
 </nav>
 <h1><b><i><u>Add New Product Console....</u></i></b></h1>
-<form action="#" method="post">
+<form action="/Chat_on_1.0/Product_Handeller" method="post">
   <div class="form-group">
     <label for="exampleInputEmail1">Enter Product id</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter pid">
+    <input type="text" class="form-control" name="pid" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter pid" >
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Enter Product Name</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter pname">
+    <input type="text" class="form-control" name="pname" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter pname">
   </div>
  <div class="form-group">
     <label for="exampleInputEmail1">Enter Product Description</label>
-    <textarea class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter pdis"></textarea>
+    <textarea class="form-control" name="pdis" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter pdis"></textarea>
   </div>
     <div class="form-group">
     <label for="exampleInputEmail1">Enter Product Image Path</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter pimg">
+    <input type="text" class="form-control" name="pimg" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter pimg">
   </div>
     <div class="form-group">
     <label for="exampleInputEmail1">Enter Product Price</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter price">
+    <input type="text" class="form-control" name="price" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter price">
   </div>
+  <input type="hidden" name="add" value="add" >
  <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 </body>

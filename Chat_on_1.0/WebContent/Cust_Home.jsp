@@ -72,6 +72,12 @@ if(session.getAttribute("username")==null)
         <a class="nav-link" href="Booking_Cylinder.jsp">Book Cylinder</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="Cancel.jsp">Cancel Cylinder</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="View_Booking.jsp">View Booking</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="Transfer_location.jsp">Transfer Location</a>
       </li> 
       <li class="nav-item">
@@ -167,7 +173,7 @@ if(session.getAttribute("username")==null)
             <label for="message-text" class="form-control-label">User Name</label>
             <input type="text" class="form-control" id="message-text" name=username value=${sessionScope.username } />
             <label for="message-text" class="form-control-label">Message:</label>
-            <textarea class="form-control" id="message-text" name="message" placeholder="write a comment"></textarea>
+            <textarea class="form-control" id="message-text" name="message" placeholder="write a comment" required="required"></textarea>
             <br>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="submit" class="btn btn-primary">Send message</button>

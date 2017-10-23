@@ -8,6 +8,8 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/Registration"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/Reporter"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/Cart_Logic"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/Product_Start"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/Booking_test"/>
         <property name="context-root" value="Chat_on_1.0"/>
         <property name="java-output-path" value="/Chat_on_1.0/build/classes"/>
     </wb-module>

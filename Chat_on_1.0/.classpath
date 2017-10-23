@@ -7,6 +7,8 @@
 	<classpathentry kind="src" path="Registration"/>
 	<classpathentry kind="src" path="Reporter"/>
 	<classpathentry kind="src" path="Cart_Logic"/>
+	<classpathentry kind="src" path="Product_Start"/>
+	<classpathentry kind="src" path="Booking_test"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.8.0_71">
 		<attributes>
 			<attribute name="owner.project.facets" value="java"/>

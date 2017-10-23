@@ -277,6 +277,7 @@ function onSignIn(googleUser) {
           </a>
           <ul class="treeview-menu">
             <li><a href="News.jsp"><i class="fa fa-circle-o"></i>News</a></li>
+            <li><a href="comments.jsp"><i class="fa fa-circle-o"></i>Comments</a></li>
             <li><a href="Jasper.jsp"><i class="fa fa-circle-o"></i> Reports</a></li>
            </ul>
         </li>

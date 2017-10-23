@@ -1,8 +1,12 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import="java.util.HashMap" %>    
-<%@ page import="Cart_Test.*" %>
-<%@ page errorPage="included pages/500_error.jsp" %>
+<%@ page import="java.sql.ResultSet"%>
+<%@ page import="java.sql.Statement"%>
+<%@ page import="java.sql.Connection"%>
+<%@ page import="java.sql.DriverManager"%>
+<%@ page import="Test_Register.Connection_Dao"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -16,16 +20,21 @@ body{
   background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPdNimmTX-7D_dBVPqvwJnqE7kJTxa4gPh8hTOPjXb3VBMvp3k);
   background-repeat:repeat;
 }
+#one{
+
+	position:static;
+	marin:10px;
+	padding: 10px;
+}
 </style>
-<title>Cart@E-Gas</title>
+<title>View Booking@E gas</title>
 </head>
 <body>
 <%
 response.setHeader("Cache-Control", "no-cache, no-store,must-revalidate");
 if(session.getAttribute("username")==null)
-	response.sendRedirect("included pages/500_error.jsp");
-%>
-
+	response.sendRedirect("Home.html");
+%>     
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="Home.html">E Gas Sewa</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,50 +53,46 @@ if(session.getAttribute("username")==null)
 <%if (session.getAttribute("username") != null ) {%>
 	<jsp:include page="included pages/logout1.jsp"></jsp:include>
         <%
-        } %>
- <br>
+        }  %>
+<br>
+<sql:setDataSource var="myDS" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/test1" user="root" password="ashutosh"/>
+<sql:query var="list_comments" dataSource="${myDS}">
+    select * from booking where buser='${sessionScope.username}';
+</sql:query>
+
 <div class="fluid container">
-  <h1><u><i>Cart E-Gas Reloaded</i></u></h1>
+  <h1><u><i>Booking E-Gas Reloaded</i></u></h1>
   <p>We Highly Suggest Digital Payments as we support the Vision of Digital India. </p>
   <table class="table">
     <thead>
       <tr>
-        <th>Product Name</th>
-        <th>Product Price</th>
-        <th>        </th>
+        <th>Booking id</th>
+        <th>Booking User</th>
+        <th>Phone no</th>
+        <th>Booking address</th>
+        <th>Booking Quantity</th>
+        <th>Type of need</th>
+        <th>Booking Price</th>
+        <th>Booking Date</th>
       </tr>
+     <c:forEach var="Com" items="${list_comments.rows}">
+      <tr>
+        <th><c:out value="${Com.bid}" /></th>
+        <th><c:out value="${Com.buser}" /></th>
+        <th><c:out value="${Com.pno}" /></th>
+        <th><c:out value="${Com.badd}" /></th>
+        <th><c:out value="${Com.bquat}" /></th>
+        <th><c:out value="${Com.bneed}" /></th>
+        <th>Rs. <c:out value="${Com.bprice}" /></th>
+        <th><c:out value="${Com.bdate}" /></th>
+      </tr>
+      </c:forEach>
     </thead>
-    <tbody>
-     <%
-     Cart shoppingCart;
-     shoppingCart = (Cart) session.getAttribute("cart");
-     HashMap<String, Integer> items = shoppingCart.getCartItems();
-           
-            for(String key: items.keySet()){
-                out.println("<tr><td><b><i>"+key+"</i></b></td><td><b><i>"+"Rs."+items.get(key)+"</i></b></td>"+
-            "<td><form action='Addtocart' method='post'>"+
-            "<input type='hidden' name='pname' value='"+key+"'><input type='hidden' name='del' value='del'>"+
-                "<button type='submit' class='btn btn-primary'>Delete the item.</button></form></td></tr>");
-              }
-      %>
-      <tr>
-        <th>Total Payable Amount is:</th>
-        <th>                        </th>
-        <th><% 
-        int sum=0;
-        for(String key: items.keySet()){
-        	sum=sum+items.get(key);        
-        }        
-        out.println("Rs. "+sum);%></th>
-      </tr>
-    </tbody>
-      <tr>
-        <th><form action="Cust_product.jsp"><button type="submit" class="btn btn-primary">Buy More Products.</button></form></th>
-        <th>                                           </th>
-        <th><form action="payment.jsp"><button type="submit" class="btn btn-primary">Proceed To Payments.</button></form></th>
-      </tr>
-
   </table>
 </div>
+
+
+  	<br>
+	<br>
 </body>
 </html>
